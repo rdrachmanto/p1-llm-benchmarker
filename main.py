@@ -34,7 +34,8 @@ def _set_metrics_recorder(platform, out):
 
 
 def main(args):
-    out = Path("some_path")
+    out = Path(args.output_dir)
+    out.mkdir(parents=True, exist_ok=True)
 
     procs: dict[str, subprocess.Popen] = {}
     logs: dict[str, object] = {}
@@ -91,6 +92,7 @@ if __name__ == "__main__":
     # parser.add_argument("--to-benchmark", "-tb")
     parser.add_argument("--exec-string", "-exs")
     parser.add_argument("--platform", "-p")
+    parser.add_argument("--output-dir", "-od")
 
     args = parser.parse_args()
     print(args)
