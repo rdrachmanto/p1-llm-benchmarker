@@ -90,9 +90,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # parser.add_argument("--py-executable", "-pyex")
     # parser.add_argument("--to-benchmark", "-tb")
-    parser.add_argument("--exec-string", "-exs")
-    parser.add_argument("--platform", "-p")
-    parser.add_argument("--output-dir", "-od")
+    parser.add_argument("--exec-string", "-exs", required=True)
+    parser.add_argument("--platform", "-p", required=True)
+    parser.add_argument("--output-dir", "-od", required=True)
 
     args = parser.parse_args()
     print(args)
